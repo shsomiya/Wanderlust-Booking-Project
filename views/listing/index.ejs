@@ -1,0 +1,177 @@
+<div class=" d-flex car-fil "id="carousel">
+
+
+
+<!-- Carousel -->
+<div id="customCarousel" class="carousel slide " data-bs-ride="carousel">
+  <div class="carousel-inner text-center py-2">
+    <div class="carousel-item active">
+      <div class="d-flex flex-wrap justify-content-center gap-2">
+        <div class="cate text-center">
+          <i class="fa-solid fa-house "></i>
+          <p>Cabins</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-mountain-city "></i>
+          <p>Mountain</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-tree "></i>
+          <p>Forest</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-water "></i>
+          <p>Lake</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-tree "></i>
+          <p>Forest</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-water "></i>
+          <p>Lake</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-tree "></i>
+          <p>Forest</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-water "></i>
+          <p>Lake</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-tree "></i>
+          <p>Forest</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-water "></i>
+          <p>Lake</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-water "></i>
+          <p>Lake</p>
+        </div>
+       
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div class="d-flex flex-wrap justify-content-center gap-2">
+        <div class="cate text-center">
+          <i class="fa-solid fa-house "></i>
+          <p>Cabins</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-water "></i>
+          <p>Lake</p>
+        </div>
+       
+        <div class="cate text-center">
+          <i class="fa-solid fa-tree "></i>
+          <p>Forest</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-water "></i>
+          <p>Lake</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-mountain-city "></i>
+          <p>Mountain</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-tree "></i>
+          <p>Forest</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-water "></i>
+          <p>Lake</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-tree "></i>
+          <p>Forest</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-water "></i>
+          <p>Lake</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-tree "></i>
+          <p>Forest</p>
+        </div>
+        <div class="cate text-center">
+          <i class="fa-solid fa-water "></i>
+          <p>Lake</p>
+        </div>
+       
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev " type="button" data-bs-target="#customCarousel" data-bs-slide="prev">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+  <button class="carousel-control-next " type="button" data-bs-target="#customCarousel" data-bs-slide="next">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+</div>
+
+
+<div class="f-btn">
+<div class=" filter-btn"id="taxes">
+     <div class="form-check form-switch" >
+    <input class="form-check-input" type="checkbox" id="bookingSwitch">
+    <label class="form-check-label" for="bookingSwitch">Taxes</label>
+  </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+  
+
+
+
+ 
+
+  
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+    <% for(let allList of allLists){ %>
+      <div class="col">
+        <a href="/listing/<%= allList._id %>" class="text-decoration-none">
+          <div class="card h-100 listing-card">
+            <% if(allList.image) { %>
+              <img 
+                src="<%= typeof allList.image === 'object' ? allList.image.url : allList.image %>" 
+                class="card-img-top " 
+                style="height: 200px; object-fit: cover;" 
+                alt="<%= allList.title %>"
+              >
+            <% } else { %>
+              <img 
+                src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" 
+                class="card-img-top" 
+                style="height: 200px; object-fit: cover;" 
+                alt="Placeholder"
+              >
+            <% } %>
+            
+            <div class="card-body">
+              <h5 class="card-title"><%= allList.title %></h5>
+              <p class="card-text">
+                <span><%= allList.price ? allList.price.toLocaleString("en-BD") + " TK" : "N/A" %>
+                </span>
+                <i class="tax-info">&nbsp;&nbsp; +18%Gst</i>
+                
+
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    <% } %>
+  </div> 
