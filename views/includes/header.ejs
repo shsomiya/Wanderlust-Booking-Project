@@ -27,12 +27,12 @@
               <button class="btn btn-outline-danger " type="button" data-bs-toggle="dropdown"    aria-expanded="false"><i class="fa-solid fa-user"></i>
               </button>
             <ul class="dropdown-menu">
-    <% if(typeof curruser !== 'undefined' && curruser && curruser._id){ %> 
-    <a class="nav-link " aria-current="page" href="/signup">Signup</a>
-          <a class="nav-link" href="/login">Login</a>
-          <% } else { %>
-    <li><a class="nav-link" href="/logout">Logout</a></li>
-     <%}%>
+   <% if (typeof curruser !== 'undefined' && curruser && curruser._id) { %> 
+      <li><a class="nav-link" href="/logout">Logout</a></li>
+  <% } else { %>
+      <li><a class="nav-link" href="/signup">Signup</a></li>
+      <li><a class="nav-link" href="/login">Login</a></li>
+  <% } %>
   </ul>
 
 
